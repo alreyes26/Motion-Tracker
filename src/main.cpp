@@ -173,6 +173,6 @@ extern "C" void app_main(void)
     {
         read_motion_data();
 
-        vTaskDelay(pdMS_TO_TICKS(200));
+        vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
