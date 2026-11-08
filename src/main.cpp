@@ -14,3 +14,14 @@ i2c_config_t config = {
 };
 
 i2c_param_config(I2C_NUM_0, config);
+
+
+i2c_driver_install(I2C_NUM_0, config.mode, 0, 0, 0);
+
+
+    for(int address = 0x01; address <= 0x7f; address++)
+    {
+
+
+
+    }
