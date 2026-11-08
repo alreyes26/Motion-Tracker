@@ -23,4 +23,3 @@ void initialize_mpu6050();
 MotionData read_motion_data();
 
 #endif
-
