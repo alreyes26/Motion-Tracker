@@ -1,21 +1,16 @@
-#include "freeteros/FreeterOS.h"
-#include "freeteros/task.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/i2c.h"
 #include "esp_log.h"
 
-static const char *TAG = "MOTION_TRACKER";
 
-extern "C void app_main() 
+class i2c_driver 
 {
-    ESP_LOGI(TAG, "Starting Motion Tracker Initialized");
+    public:
+        i2c_driver(i2c_mode, i2c_port_t, gpio_num_t, gpio_num_t, uint32_t);
+        
 
-    while(true)
-    {
-        ESP_LOGI(TAG, "Motion Tracker Running");
-    }
-    vTaskDelay(pdms.ToTicks(1000));
+
+
 
 }
-
-
-// Define the pins
-const int pirPin = 2;   // PIR sensor output pin connected to digital pin 2
