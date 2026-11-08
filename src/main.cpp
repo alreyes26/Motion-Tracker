@@ -7,7 +7,6 @@
 
 static const char *TAG = "MOTION_TRACKER";
 
-// I2C configuration
 #define I2C_PORT I2C_NUM_0
 #define SDA_PIN GPIO_NUM_21
 #define SCL_PIN GPIO_NUM_22
@@ -75,5 +74,27 @@ void scan_i2c()
             devices_found++;
         }
     }
+    if (devices_found == 0)
+    {
+        ESP_LOGW(TAG, "No I2C devices found!");
+    }
+    else
+    {
+        ESP_LOGI(TAG, "Scan complete. Found %d device(s).", devices_found);
+    }
+}
 
-    
+extern "C" void app_main(void)
+{
+    ESP_LOGI(TAG, "Starting Motion Tracker...");
+
+    initialize_i2c();
+
+    scan_i2c();
+
+    while (true)
+    {
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
+
