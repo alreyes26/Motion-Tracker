@@ -52,4 +52,28 @@ void scan_i2c()
         );
 
         i2c_master_stop(cmd);
-        
+
+        i2c_master_write_byte(
+            cmd,
+            (address << 1) | I2C_MASTER_WRITE,
+            true
+        );
+
+        i2c_master_stop(cmd);
+
+        esp_err_t result = i2c_master_cmd_begin(
+            I2C_PORT,
+            cmd,
+            pdMS_TO_TICKS(100)
+        );
+
+        i2c_cmd_link_delete(cmd);
+
+        if (result == ESP_OK)
+        {
+            ESP_LOGI(TAG, "Device found at address: 0x%02X", address);
+            devices_found++;
+        }
+    }
+
+    
