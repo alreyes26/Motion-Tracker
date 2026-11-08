@@ -1,10 +1,6 @@
 
-idf_component_register(
-    SRCS
-        "main.cpp"
-        "mpu6050.cpp"
+cmake_minimum_required(VERSION 3.16)
 
-    INCLUDE_DIRS
-        "."
-        "include"
-)
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+
+project(MotionTracker)

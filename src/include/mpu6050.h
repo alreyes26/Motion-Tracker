@@ -4,7 +4,6 @@
 
 #include <stdint.h>
 
-// Stores all six sensor measurements
 struct MotionData
 {
     int16_t accel_x;

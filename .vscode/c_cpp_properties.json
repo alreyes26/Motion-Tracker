@@ -245,6 +245,7 @@
                 "C:/Users/Ana/.platformio/packages/framework-espidf/components/rt/include",
                 "C:/Users/Ana/.platformio/packages/framework-espidf/components/spiffs/include",
                 "C:/Users/Ana/OneDrive/Escritorio/Motion-Tracker/src",
+                "C:/Users/Ana/OneDrive/Escritorio/Motion-Tracker/src/include",
                 ""
             ],
             "browse": {
@@ -487,6 +488,7 @@
                     "C:/Users/Ana/.platformio/packages/framework-espidf/components/rt/include",
                     "C:/Users/Ana/.platformio/packages/framework-espidf/components/spiffs/include",
                     "C:/Users/Ana/OneDrive/Escritorio/Motion-Tracker/src",
+                    "C:/Users/Ana/OneDrive/Escritorio/Motion-Tracker/src/include",
                     ""
                 ]
             },
