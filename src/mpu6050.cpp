@@ -110,11 +110,19 @@ void initialize_mpu6050()
 
     vTaskDelay(pdMS_TO_TICKS(2000));
 
-    if (identity != MPU6050_ADDR)
-    {
-        ESP_LOGE(TAG, "Unexpected sensor identity!");
-        abort();
-    }
+    if (identity == 0x68)
+{
+    ESP_LOGI(TAG, "MPU6050 detected!");
+}
+else if (identity == 0x70)
+{
+    ESP_LOGI(TAG, "MPU6500-compatible sensor detected!");
+}
+else
+{
+    ESP_LOGE(TAG, "Unknown sensor identity: 0x%02X", identity);
+    abort();
+}
 
     ESP_LOGI(TAG, "MPU6050 initialized successfully");
 }
