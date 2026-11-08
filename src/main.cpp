@@ -32,3 +32,24 @@ void initialize_i2c()
 
     ESP_LOGI(TAG, "I2C initialized successfully");
 }
+
+void scan_i2c()
+{
+    ESP_LOGI(TAG, "Scanning I2C bus...");
+
+    int devices_found = 0;
+
+    for (int address = 0x08; address <= 0x77; address++)
+    {
+        i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+
+        i2c_master_start(cmd);
+
+        i2c_master_write_byte(
+            cmd,
+            (address << 1) | I2C_MASTER_WRITE,
+            true
+        );
+
+        i2c_master_stop(cmd);
+        
