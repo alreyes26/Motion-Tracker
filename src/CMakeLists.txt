@@ -1,4 +1,10 @@
+
 idf_component_register(
-    SRCS "main.cpp"
-    INCLUDE_DIRS "."
+    SRCS
+        "main.cpp"
+        "mpu6050.cpp"
+
+    INCLUDE_DIRS
+        "."
+        "include"
 )
